@@ -12,14 +12,14 @@ const words = lowerWords + upperWords;
  * [GET] get random words with a number someone put to url
  */
 app.get("/api/:number?", (req, res) => {
-  console.log(req.params);
   let length = 6;
+
   if (req.params.number) {
     length = parseInt(req.params.number); //parser param to integer
   }
-  let result = "";
 
   if (Number.isInteger(length) && length > 0) {
+    let result = "";
     for (let i = 0; i < length; i++) {
       result += words.charAt(Math.floor(Math.random() * words.length));
     }
