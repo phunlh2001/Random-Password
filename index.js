@@ -11,7 +11,7 @@ const words = lowerWords + upperWords;
 app.get("/api", (req, res) => {
   let result = "";
   for (let i = 0; i < 6; i++) {
-    result += words.charAt(Math.floor(Math.random() * 7));
+    result += words.charAt(Math.floor(Math.random() * words.length));
   }
   res.status(200).json({ msg: `your words: ${result}` });
 });
