@@ -16,7 +16,7 @@ app.get("/api", (req, res) => {
   for (let i = 0; i < 6; i++) {
     result += words.charAt(Math.floor(Math.random() * words.length));
   }
-  res.status(200).json({ msg: `your words: ${result}` });
+  res.status(200).json({ msg: result });
 });
 
 /**
